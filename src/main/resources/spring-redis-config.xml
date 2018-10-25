@@ -63,7 +63,7 @@
     <!--<bean class="org.springframework.data.redis.serializer.JdkSerializationRedisSerializer"></bean>-->
     <!--注册一个缓存管理者-->
     <bean class="org.springframework.data.redis.cache.RedisCacheManager">
-        <constructor-arg name="cacheNames" value="itsztElc"></constructor-arg>
+        <constructor-arg name="cacheNames" value="xpbs"></constructor-arg>
         <constructor-arg name="cacheNullValues" value="false"></constructor-arg>
         <constructor-arg name="redisOperations" ref="redisTemplate"></constructor-arg>
     </bean>

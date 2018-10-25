@@ -10,7 +10,7 @@
           http://www.springframework.org/schema/context/spring-context-3.0.xsd
           http://www.springframework.org/schema/mvc
           http://www.springframework.org/schema/mvc/spring-mvc.xsd">
-    <context:component-scan base-package="com.itszt.el_System.controller"></context:component-scan>
+    <context:component-scan base-package="com.xpbs.controller"></context:component-scan>
     <bean id="jsonconverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"></bean>
 
     <mvc:annotation-driven>
@@ -18,23 +18,20 @@
             <ref bean="jsonconverter"></ref>
         </mvc:message-converters>
     </mvc:annotation-driven>
-    <mvc:resources mapping="/css/**" location="/css/"/>
-    <mvc:resources mapping="/images/**" location="/images/"/>
-    <mvc:resources mapping="/script/**" location="/script/"/>
-    <mvc:resources mapping="/My97DatePicker/**" location="/My97DatePicker/"/>
+    <mvc:resources mapping="/evalue/**" location="/evalue/"/>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/"></property>
         <property name="suffix" value=".jsp"></property>
     </bean>
-    <mvc:interceptors>
-        <mvc:interceptor>
-            <mvc:mapping path="/**"/>
-            <mvc:exclude-mapping path="/index/doLgoin.html"></mvc:exclude-mapping>
-            <bean class="com.itszt.el_System.controller.interceptor.CheckLoginState">
-        </bean>
-        </mvc:interceptor>
-    </mvc:interceptors>
+    <!--<mvc:interceptors>-->
+        <!--<mvc:interceptor>-->
+            <!--<mvc:mapping path="/**"/>-->
+            <!--<mvc:exclude-mapping path="/index/doLgoin.html"></mvc:exclude-mapping>-->
+            <!--&lt;!&ndash;<bean class="com.itszt.el_System.controller.interceptor.CheckLoginState">&ndash;&gt;-->
+        <!--</bean>-->
+        <!--</mvc:interceptor>-->
+    <!--</mvc:interceptors>-->
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
         <property name="defaultEncoding" value="UTF-8"></property>
         <property name="maxUploadSizePerFile" value="10240000"></property>

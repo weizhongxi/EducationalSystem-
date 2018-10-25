@@ -30,13 +30,13 @@
         <!--指明mybatis的主配置文件的位置-->
         <property name="configLocation" value="classpath:mybatis-config.xml"></property>
         <!--别名设置-->
-        <property name="typeAliasesPackage" value="com.itszt.el_System.domain"></property>
+        <property name="typeAliasesPackage" value="com.xpbs.domain"></property>
 
     </bean>
     <!--设置我们扫描mapper的包-->
     <bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
-        <property name="basePackage" value="com.itszt.el_System.dao"></property>
+        <property name="basePackage" value="com.xpbs.dao"></property>
     </bean>
 
 
