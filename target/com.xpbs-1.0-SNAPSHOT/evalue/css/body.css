@@ -1,0 +1,25 @@
+﻿/* ---本文件为网站共用默认样式所有（不包括颜色） --- */
+body{text-align:center;padding:0; margin:0;}table,html body{ font-size: 13px ;text-decoration: none;font-family:Arial,宋体;}p{padding: 0 0 5px 0; margin:0}/*-默认<p></p>-*/form{margin:0;}img{border:0;}ul,li,dt,dl,dd,h1,h2,h3,ol{list-style:none;margin:0;padding:0;}/* 常用 */.on_left{float:left;}.on_right{float:right;}.HackBox{border-top:1px solid !important;margin-top:-1px !important;border-top:0;margin-top:0;clear:both;visibility:hidden;}
+area{outline: none}
+/* --del- blank 空格 --- */
+.blank0px,.blank2px,.blank5px,.blank8px,.blank10px,.blank16px,.blank20px,.blank15px,.blank12px{clear:both;visibility:hidden;font-size:1px; overflow:hidden}
+.blank0px{height:0px;}.blank2px{height:2px;}.blank5px{height:5px;}.blank8px{height:8px;}.blank10px{height:10px;}.blank15px{height:15px;}.blank16px{height:16px;}.blank20px{height:20px;}.blank12px{height:12px;}
+/* 公用框架 */
+.bg,.div_center{margin:0 auto; }.bg{text-align:left;   display:block; clear:both;}     
+.shou{cursor:pointer}
+.hide{ display:none;}
+/*---没有任何信息----*/
+.none_dd2{ text-align:center;color:#a9a9a9; padding:50px 0;}.none_dd2 div{ width:100px; height:100px; background:url(../images/wuxinxi.png) no-repeat center; margin:0 auto;  }
+
+
+
+ /*浮动背景 */
+ .cc_gy_all_br{  position:absolute; width:100%; height:100%; position:fixed; background:#000;z-index:999; filter:alpha(opacity=70); /*IE滤镜，透明度50%*/-moz-opacity:0.7; /*Firefox私有，透明度50%*/
+opacity:0.7;/*其他，透明度50%*/ top:58px; left:0; right:0; bottom:0;}
+
+ /*liupeng选择日历 */
+.ui-datepicker select.ui-datepicker-month,.ui-datepicker select.ui-datepicker-year{ border:1px solid #fff !important;}.ui-datepicker th{ color: #036ab5 !important;    padding: .7em 0!important;}.ui-datepicker-calendar th span{border-bottom:1px solid #036ab5 !important; padding-bottom:5px !important; display:block !important; width:100% !important; font-weight:normal !important;} .ui-datepicker td{ padding:1px !important;}.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {border:none !important;background: #f4f4f4 !important;    font-weight: normal !important;color: #666 !important;}.ui-widget-header {border: none !important;background: #036ab5 !important;    color: #e7e7e7 !important;border-radius:0 !important;}.ui-widget-content {-moz-box-shadow: 0px 0px 8px rgba(0,0,0,.8) ;-webkit-box-shadow: 0px 0px 8px rgba(0,0,0,.8) ;box-shadow: 0px 0px 8px rgba(0,0,0,.8)  ; padding:0 !important;border: none !important; border-radius:0 !important;background: #fcfdfd !important;color: #222222 !important;}.ui-widget-content{ border:1px solid #036ab5!important;}@media only screen and (min-width: 320px){.ui-widget-content{ border:none !important;}}.ui-widget-content .ui-state-focus, .ui-widget-content .ui-state-hover,.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active{  border:none;background: #7bbd65 !important; border-radius:0 !important;    color: #fff !important;}.ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-header .ui-state-focus {border:none !important;background: #fff !important; border-radius:0 !important; color: #026890 !important;}
+	
+/*daqirili选择日历 */
+.pika-lendar { padding:0 0 10px 0 !important; margin:0 !important;}.pika-table {width: 98% !important;} .pika-single,.pika-single.is-bound{-moz-box-shadow: 0px 0px 8px rgba(0,0,0,.8) ;-webkit-box-shadow: 0px 0px 8px rgba(0,0,0,.8) ;box-shadow: 0px 0px 8px rgba(0,0,0,.8)  ; padding:0 !important;    border: none !important; border-radius:0 !important;background: #fcfdfd !important;    color: #222222 !important;}.pika-lendar{ border:1px solid #036ab5 !important}@media only screen and (min-width: 320px){.pika-lendar{ border:none !important;}}.pika-title{ border: none !important;background: #036ab5 !important;color: #e7e7e7 !important;border-radius:0 !important;}.pika-label{ background:#fff url(../images/ky_dd/biaox.gif) right center no-repeat; font-size:12px; margin:4px 1px 1px 1px; font-weight:normal; color:#999; height:24px; line-height:24px; padding:0 20px 0 8px;}.pika-table th{ color: #036ab5 !important;  }.is-today .pika-button { border:none !important;background: #ff8500 !important; border-radius:0 !important;    color: #fff !important;}.pika-button:hover,.is-selected .pika-button{box-shadow: inset 0 1px 3px #7bbd65!important; border:none !important;background: #7bbd65 !important; border-radius:0 !important;color: #fff !important;}.pika-table th, .pika-table td {padding: 1px!important;}.pika-next, .is-rtl .pika-prev{opacity:1!important;  background-image:url(../images/ky_dd/liri_r.png) !important}.pika-prev, .is-rtl .pika-next{ opacity:1!important;background-image:url(../images/ky_dd/liri_l.png) !important}
+
