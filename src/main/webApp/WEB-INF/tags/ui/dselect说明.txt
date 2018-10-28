@@ -1,0 +1,10 @@
+<div class="control-group">
+	<label class="control-label">所属系统:</label>
+	<div class="controls">
+	   <ui:dselect id="menu" name="systemid" value="${role.systemid}" labelName="name" labelValue="${role.name}"
+			title="系统" url="/admin/manage/getSystem"  cssClass="required" where="1=1" getColumn="name,enname"  allowClear="true" />
+	</div>
+</div>
+
+
+modules\admin\view\getSystemView.jsp

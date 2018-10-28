@@ -22,7 +22,7 @@
 		<span>V1.003.1.2</span>
 	</div>
 
-	<form action="##${ctx}/student/dologin.html" method="post" id="loginForm">
+	<form action="${ctx}/index/dologin.html" method="post" id="loginForm">
 		<div class="denglu_i text-center">
 			<h1>实现所有教学想象</h1>
 			<p>嵌入式教学资源与教学成果分析</p>
@@ -43,7 +43,7 @@
 			</div>
 
 
-			<input class="shou" name="" type="button"  onclick="login()" src="${ctxStatic}/evalue/images/login.png">
+			<input class="shou" name="" type="image"  onclick="login()" src="${ctxStatic}/evalue/images/login.png">
 		</div>
 	</form>
 	<script type="text/javascript">
@@ -51,9 +51,7 @@
             console.log(11);
             var username=document.getElementById("username").value;
             var userpwd=document.getElementById("password").value;
-            console.log(username);
             if (!checkEmpty(username)){
-                message='用户名不能为空';
                 alert("用户名不能为空！！");
                 return;
             }

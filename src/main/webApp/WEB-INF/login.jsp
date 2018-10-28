@@ -22,7 +22,7 @@
 		<span>V1.003.1.2</span>
 	</div>
 
-	<form action="##${ctx}/student/dologin.html" method="post" id="loginForm">
+	<form action="${ctx}/index/dologin.html" method="post" id="loginForm">
 		<div class="denglu_i text-center">
 			<h1>实现所有教学想象</h1>
 			<p>嵌入式教学资源与教学成果分析</p>
@@ -42,8 +42,7 @@
 				<label><input name="usertype" type="radio" value="admin" ><div class="radio"></div><span><img src="${ctxStatic}/evalue/images/r3.png" ></span></label>
 			</div>
 
-
-			<input class="shou" name="" type="button"  onclick="login()" src="${ctxStatic}/evalue/images/login.png">
+			<input class="shou" name="" type="image"  onclick="login()" src="${ctxStatic}/evalue/images/login.png">
 		</div>
 	</form>
 	<script type="text/javascript">
