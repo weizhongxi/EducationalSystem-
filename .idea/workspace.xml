@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="346e5ba4-96c6-4d84-a86f-7462d5632d89" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/xpbs/domain/Meun.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/xpbs/util/RandomValidateCode.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webApp/evalue/css/login.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/xpbs/controller/IndexController.class" afterPath="$PROJECT_DIR$/target/classes/com/xpbs/controller/IndexController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/xpbs/dao/TeacherDao.class" afterPath="$PROJECT_DIR$/target/classes/com/xpbs/dao/TeacherDao.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/xpbs/service/TeacherService.class" afterPath="$PROJECT_DIR$/target/classes/com/xpbs/service/TeacherService.class" />
@@ -14,12 +11,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/com.xpbs-1.0-SNAPSHOT/WEB-INF/classes/com/xpbs/service/TeacherService.class" afterPath="$PROJECT_DIR$/target/com.xpbs-1.0-SNAPSHOT/WEB-INF/classes/com/xpbs/service/TeacherService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/com.xpbs-1.0-SNAPSHOT/WEB-INF/classes/com/xpbs/service/TeacherServiceImpl.class" afterPath="$PROJECT_DIR$/target/com.xpbs-1.0-SNAPSHOT/WEB-INF/classes/com/xpbs/service/TeacherServiceImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/xpbs/controller/IndexController.java" afterPath="$PROJECT_DIR$/src/main/java/com/xpbs/controller/IndexController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/xpbs/dao/TeacherDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/xpbs/dao/TeacherDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/xpbs/service/TeacherService.java" afterPath="$PROJECT_DIR$/src/main/java/com/xpbs/service/TeacherService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/xpbs/service/TeacherServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/xpbs/service/TeacherServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webApp/WEB-INF/index.jsp" afterPath="$PROJECT_DIR$/src/main/webApp/WEB-INF/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webApp/WEB-INF/login.jsp" afterPath="$PROJECT_DIR$/src/main/webApp/WEB-INF/login.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/com.xpbs-1.0-SNAPSHOT/WEB-INF/index.jsp" afterPath="$PROJECT_DIR$/target/com.xpbs-1.0-SNAPSHOT/WEB-INF/index.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/com.xpbs-1.0-SNAPSHOT/WEB-INF/login.jsp" afterPath="$PROJECT_DIR$/target/com.xpbs-1.0-SNAPSHOT/WEB-INF/login.jsp" />
     </list>
@@ -1118,7 +1109,7 @@
       <workItem from="1540688501551" duration="6200000" />
       <workItem from="1540709925248" duration="9313000" />
       <workItem from="1540725111116" duration="8660000" />
-      <workItem from="1540796896750" duration="320000" />
+      <workItem from="1540796896750" duration="365000" />
     </task>
     <task id="LOCAL-00001" summary="xx">
       <created>1540462198660</created>
@@ -1148,11 +1139,18 @@
       <option name="project" value="LOCAL" />
       <updated>1540626876680</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="韦忠喜提交">
+      <created>1540797262243</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1540797262243</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55049000" />
+    <option name="totallyTimeSpent" value="55094000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1267,7 +1265,8 @@
     <MESSAGE value="韦忠喜第二次提交" />
     <MESSAGE value="韦忠喜第三次提交" />
     <MESSAGE value="韦忠喜第四次提交" />
-    <option name="LAST_COMMIT_MESSAGE" value="韦忠喜第四次提交" />
+    <MESSAGE value="韦忠喜提交" />
+    <option name="LAST_COMMIT_MESSAGE" value="韦忠喜提交" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1464,6 +1463,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="4" column="9" lean-forward="false" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
