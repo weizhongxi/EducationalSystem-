@@ -50,7 +50,7 @@
 
             <div class="usr_r">
                 <ul>
-                    <li class="color_cheng_n yh_zz">你好，${fns:getUser().name}</li>
+                    <li class="color_cheng_n yh_zz">${user}</li>
                     <li><a href="${sysPath}/login?id=f9d6882e006d4ca6a574f8c993e65053">退出</a></li>
                     <li><a href="#">关于我们</a></li>
                 </ul>
@@ -63,12 +63,11 @@
         <ul>
             <li class="col-sm-2"><a href="/"  class="aMenuA">首页</a>
             </li>
-            <c:forEach items="${fns:getVMenuList('f9d6882e006d4ca6a574f8c993e65053')}" var="VFirstMneu" varStatus="idxStatus">
-                <c:forEach items="${VFirstMneu.list}" var="VSecondMenu">
-                    <li class="col-sm-2"><a href="javascript:void(0);" onclick="load(this);" data-ref="${fn:indexOf(VSecondMenu.menu.href, '://') eq -1 ? adminPath : ''}${VSecondMenu.menu.href}" id="${VSecondMenu.id}"  class="aMenuA"> ${VSecondMenu.menu.name} </a>
+
+                <c:forEach items="${meunList}" var="meunList">
+                    <li class="col-sm-2"><a href="javascript:void(0);" onclick="load(this);" data-ref="${meunList.url}"  class="aMenuA"> ${meunList.urlName} </a>
                     </li>
                 </c:forEach>
-            </c:forEach>
         </ul>
     </div>
 
@@ -187,48 +186,48 @@
     <!--<dl class="home this">
         <dt><a target="u_center" href="yonghuzhongxin.html"><i class="iconfont icon-d-1"></i>控制面板</a></dt>
     </dl>-->
-    <c:forEach items="${fns:getVMenuList('f9d6882e006d4ca6a574f8c993e65053')}" var="VFirstMneu" varStatus="idxStatus">
-        <dl><!--显示一级菜单-->
-            <dt>
-                <a href="javascript:void(0)" id="${VFirstMneu.id}"><i
-                        class="iconfont icon-d-1"></i>${VFirstMneu.menu.name}</a>
-            </dt>
+    <%--<c:forEach items="${fns:getVMenuList('f9d6882e006d4ca6a574f8c993e65053')}" var="VFirstMneu" varStatus="idxStatus">--%>
+        <%--<dl><!--显示一级菜单-->--%>
+            <%--<dt>--%>
+                <%--<a href="javascript:void(0)" id="${VFirstMneu.id}"><i--%>
+                        <%--class="iconfont icon-d-1"></i>${VFirstMneu.menu.name}</a>--%>
+            <%--</dt>--%>
 
-            <dd>
-                <c:forEach items="${VFirstMneu.list}" var="VSecondMenu" varStatus="status">
-                    <dl class="VSecondMenu">
-                        <!--显示二级级菜单-->
-                        <c:choose>
-                            <c:when test="${fn:length(VSecondMenu.list) == 0}">
-                                <!--是菜单-->
-                                <dd class="allshow">
-                                    <a  target="u_center" href="javascript:void(0);" onclick="load(this);"
-                                       data-ref="${fn:indexOf(VSecondMenu.menu.href, '://') eq -1 ? adminPath : ''}${VSecondMenu.menu.href}"
-                                       data-id="${VSecondMenu.menu.id}"><i
-                                            class="iconfont ${VSecondMenu.menu.icon}"></i>${VSecondMenu.menu.name}</a>
-                                </dd>
-                            </c:when>
-                            <c:otherwise>
-                                <!--是下级菜单父级-->
-                                <dt>
-                                    <a href="javascript:void(0)" id="${VSecondMenu.id}"><i
-                                            class="iconfont icon-d-1"></i>${VSecondMenu.menu.name}</a>
-                                </dt>
-                                <!--显示三级菜单-->
-                                <c:forEach items="${VSecondMenu.list}" var="menu">
-                                    <dd>
-                                        <a target="u_center" href="javascript:void(0);" onclick="load(this);"
-                                           data-ref="${fn:indexOf(menu.href, '://') eq -1 ? adminPath : ''}${menu.href}"
-                                           data-id="${menu.id}"><i class="iconfont ${menu.icon}"></i>${menu.name}</a>
-                                    </dd>
-                                </c:forEach>
-                            </c:otherwise>
-                        </c:choose>
-                    </dl>
-                </c:forEach>
-            </dd>
-        </dl>
-    </c:forEach>
+            <%--<dd>--%>
+                <%--<c:forEach items="${VFirstMneu.list}" var="VSecondMenu" varStatus="status">--%>
+                    <%--<dl class="VSecondMenu">--%>
+                        <%--<!--显示二级级菜单-->--%>
+                        <%--<c:choose>--%>
+                            <%--<c:when test="${fn:length(VSecondMenu.list) == 0}">--%>
+                                <%--<!--是菜单-->--%>
+                                <%--<dd class="allshow">--%>
+                                    <%--<a  target="u_center" href="javascript:void(0);" onclick="load(this);"--%>
+                                       <%--data-ref="${fn:indexOf(VSecondMenu.menu.href, '://') eq -1 ? adminPath : ''}${VSecondMenu.menu.href}"--%>
+                                       <%--data-id="${VSecondMenu.menu.id}"><i--%>
+                                            <%--class="iconfont ${VSecondMenu.menu.icon}"></i>${VSecondMenu.menu.name}</a>--%>
+                                <%--</dd>--%>
+                            <%--</c:when>--%>
+                            <%--<c:otherwise>--%>
+                                <%--<!--是下级菜单父级-->--%>
+                                <%--<dt>--%>
+                                    <%--<a href="javascript:void(0)" id="${VSecondMenu.id}"><i--%>
+                                            <%--class="iconfont icon-d-1"></i>${VSecondMenu.menu.name}</a>--%>
+                                <%--</dt>--%>
+                                <%--<!--显示三级菜单-->--%>
+                                <%--<c:forEach items="${VSecondMenu.list}" var="menu">--%>
+                                    <%--<dd>--%>
+                                        <%--<a target="u_center" href="javascript:void(0);" onclick="load(this);"--%>
+                                           <%--data-ref="${fn:indexOf(menu.href, '://') eq -1 ? adminPath : ''}${menu.href}"--%>
+                                           <%--data-id="${menu.id}"><i class="iconfont ${menu.icon}"></i>${menu.name}</a>--%>
+                                    <%--</dd>--%>
+                                <%--</c:forEach>--%>
+                            <%--</c:otherwise>--%>
+                        <%--</c:choose>--%>
+                    <%--</dl>--%>
+                <%--</c:forEach>--%>
+            <%--</dd>--%>
+        <%--</dl>--%>
+    <%--</c:forEach>--%>
 
 </div>
 
