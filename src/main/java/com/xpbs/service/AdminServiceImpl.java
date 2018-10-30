@@ -2,10 +2,13 @@ package com.xpbs.service;
 
 import com.xpbs.dao.AdminDao;
 import com.xpbs.domain.Admin;
+import com.xpbs.domain.Meun;
 import com.xpbs.domain.Teacher;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * Created by admin on 2018/10/28.
@@ -20,6 +23,17 @@ public class AdminServiceImpl implements AdminService{
         try {
             Admin admin = adminDao.queryTeacherDologin(username, password);
             return admin;
+        }catch (Exception e){
+            logger.error(""+e);
+        }
+        return null;
+    }
+
+    @Override
+    public List<Meun> getAdminMeunByUserid(String userid) {
+        try {
+            List<Meun> meuns = adminDao.queryAdminMenuByUserid(userid);
+            return meuns;
         }catch (Exception e){
             logger.error(""+e);
         }

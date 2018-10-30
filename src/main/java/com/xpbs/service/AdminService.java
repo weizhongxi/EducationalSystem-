@@ -1,6 +1,9 @@
 package com.xpbs.service;
 
 import com.xpbs.domain.Admin;
+import com.xpbs.domain.Meun;
+
+import java.util.List;
 
 
 /**
@@ -8,4 +11,5 @@ import com.xpbs.domain.Admin;
  */
 public interface AdminService {
     public Admin getAdminDologin(String username, String password);
+    public List<Meun> getAdminMeunByUserid(String userid);
 }

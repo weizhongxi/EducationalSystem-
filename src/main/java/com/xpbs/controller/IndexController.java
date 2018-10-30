@@ -48,8 +48,9 @@ public class IndexController {
                             model.addAttribute("message","用户名或密码错误，请重试！");
                             result="login";
                         }else {
-                            List<Meun> meunByUserid = teacherService.getMeunByUserid(teacherDologin.getTeacherID());
-                            model.addAttribute("meunList",meunByUserid);
+                            List<Meun> meuns = teacherService.getTeacherMeunByUserid(teacherDologin.getTeacherID());
+                            model.addAttribute("meunList",meuns);
+                            model.addAttribute("urlHomePage","index/goTeacherHomePage.html");
                             model.addAttribute("user","你好，"+username+"老师");
                             result="index";
                         }
@@ -60,6 +61,9 @@ public class IndexController {
                             model.addAttribute("message","用户名或密码错误，请重试！");
                             result="login";
                         }else {
+                            List<Meun> meuns = adminService.getAdminMeunByUserid(adminDologin.getAdminID());
+                            model.addAttribute("meunList",meuns);
+                            model.addAttribute("urlHomePage","index/goAdminHomePage.html");
                             model.addAttribute("user","你好，"+username+"管理员");
                             result="index";
                         }
@@ -70,6 +74,9 @@ public class IndexController {
                             model.addAttribute("message","用户名或密码错误，请重试！");
                             result="login";
                         }else {
+                            List<Meun> meuns = studentService.getStudentMeunByUserid(studentDologin.getStudentID());
+                            model.addAttribute("meunList",meuns);
+                            model.addAttribute("urlHomePage","index/goStudentHomePage.html");
                             model.addAttribute("user","你好，"+username+"同学");
                             result="index";
                         }
@@ -99,5 +106,17 @@ public class IndexController {
             e.printStackTrace();
         }
 
+    }
+    @RequestMapping("/goTeacherHomePage")
+    public String goTeacherHomePage(){
+        return "/teacher/indexContentTeacher";
+    }
+    @RequestMapping("/goAdminHomePage")
+    public String goAdminHomePage(){
+        return "/admin/indexContentAdmin";
+    }
+    @RequestMapping("/goStudentHomePage")
+    public String goStudentHomePage(){
+        return "/student/indexContentStudent";
     }
 }

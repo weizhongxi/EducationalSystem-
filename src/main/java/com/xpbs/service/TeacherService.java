@@ -10,6 +10,6 @@ import java.util.List;
  */
 public interface TeacherService {
     public Teacher getTeacherDologin(String username, String password);
-    public List<Meun> getMeunByUserid(String userid);
+    public List<Meun> getTeacherMeunByUserid(String userid);
 
 }

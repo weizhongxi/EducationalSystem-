@@ -1,11 +1,15 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--<%@ include file="/WEB-INF/include/taglib.jsp" %>--%>
 <!DOCTYPE html>
 <html>
 <head>
     <title>培训系统知识库系统 v2.0</title>
-    <meta name="decorator" content="evalue"/>
-
+    <meta name="decorator" content="evalue" />
+    <link href="${ctxStatic}/evalue/css/index.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="${ctxStatic}/evalue/css/login.css" rel="stylesheet" type="text/css" />
+    <script src="${ctxStatic}/evalue/js/jquery.min.js" type="text/javascript"></script>
+    <script src="${ctxStatic}/evalue/js/all.js" type="text/javascript"></script>
     <script type="text/javascript">
         //跳转
         function load(obj) {
@@ -64,8 +68,8 @@
             <li class="col-sm-2"><a href="/"  class="aMenuA">首页</a>
             </li>
 
-                <c:forEach items="${meunList}" var="meunList">
-                    <li class="col-sm-2"><a href="javascript:void(0);" onclick="load(this);" data-ref="${meunList.url}"  class="aMenuA"> ${meunList.urlName} </a>
+                <c:forEach items="${meunList}" var="meunList1">
+                    <li class="col-sm-2"><a href="javascript:void(0);" onclick="load(this);" data-ref="${meunList1.getUrl()}"  class="aMenuA"> ${meunList1.getUrlName()} </a>
                     </li>
                 </c:forEach>
         </ul>
@@ -75,161 +79,6 @@
 
 <!----左侧--->
 <!----右侧开始--->
-<div class="u_left color_bai d_a">
-    <script type="text/javascript">
-        $(function () {
-
-            $(".suoxai,.suoxaii").click(function () {
-                $("body").toggleClass("minxw");
-            })
-
-            var s = "this"
-
-            //$(".u_header_r a").click(function() {
-            //$(".u_left dl").removeClass(s);
-            //});
-            //
-            //	$(document).on("click",'.u_left dl.this dt',function(){
-            //
-            //			var t = $(this);
-            //			var p = t.parent();
-            //			p.removeClass(s);
-            //		});
-            //
-            $(document).on("click", '.u_left dl:not(.this) dt', function () {
-                var t = $(this);
-                var p = t.parent();
-                if (p.hasClass('VSecondMenu')) {
-
-                } else {
-                    console.dir(p);
-                    if (t.find("a").size() == 1) {
-                        //							alert(2);
-                        var x = t.next("dd")
-                        x.click()
-                        //alert(3);
-                        x.find("dd").removeClass(s)
-                        p.siblings("dl").find("dd").removeClass(s);
-                    } else {
-                        if (t.nextAll("dd.this").size() == 1) {
-                            //alert("没有dd.this");
-                        } else {
-                        }
-                    }
-                    var ddDl = p.find("dd").eq(0).find("dl");
-                    if (ddDl.size() == 1) {
-                        ddDl.eq(0).addClass(s);
-                    }
-                    p.addClass(s);
-
-                    p.siblings("dl").removeClass(s);
-                }
-
-            });
-            $(document).on("click", '.u_left dl.this dt', function () {
-                var t = $(this);
-                var p = t.parent();
-                if (p.hasClass('VSecondMenu')) {
-
-                } else {
-                    $(this).parent("dl").removeClass("this");
-                }
-
-            });
-
-            $(document).on("click", '.VSecondMenu dt', function () {
-                var t = $(this);
-                var p = t.parent();
-                if (p.hasClass('this')) {
-//							alert("hava this");
-                    p.removeClass("this");
-                } else {
-//							alert("add");
-                    $(".VSecondMenu").removeClass(s);
-                    p.addClass(s);
-                }
-
-            });
-
-            var state = {
-                action: "page",
-                title: "首页",
-                url: "indcex.html"
-            };
-
-//					$(".u_left dd,.u_left dt").click(function(e) {
-//						var t = $(this);
-//						var url = "?page=" + t.find("a").attr("data-href");
-//						var text = t.find("a").text();
-//						if(t.find("a").length) {
-//							history.pushState(state, text, url);
-//						}
-//					});
-
-            $(".u_left dd").click(function (e) {
-
-                var t = $(this);
-                var p = t.parent();
-
-                t.siblings("dd").removeClass(s);
-
-                if (p.hasClass('VSecondMenu')) {
-                    $(".VSecondMenu dd").removeClass(s);
-                }
-                t.addClass(s);
-
-            });
-
-        });
-    </script>
-    <div class="suoxai shou"><i class=" iconfont icon-caidan2"></i></div>
-    <!--<dl class="home this">
-        <dt><a target="u_center" href="yonghuzhongxin.html"><i class="iconfont icon-d-1"></i>控制面板</a></dt>
-    </dl>-->
-    <%--<c:forEach items="${fns:getVMenuList('f9d6882e006d4ca6a574f8c993e65053')}" var="VFirstMneu" varStatus="idxStatus">--%>
-        <%--<dl><!--显示一级菜单-->--%>
-            <%--<dt>--%>
-                <%--<a href="javascript:void(0)" id="${VFirstMneu.id}"><i--%>
-                        <%--class="iconfont icon-d-1"></i>${VFirstMneu.menu.name}</a>--%>
-            <%--</dt>--%>
-
-            <%--<dd>--%>
-                <%--<c:forEach items="${VFirstMneu.list}" var="VSecondMenu" varStatus="status">--%>
-                    <%--<dl class="VSecondMenu">--%>
-                        <%--<!--显示二级级菜单-->--%>
-                        <%--<c:choose>--%>
-                            <%--<c:when test="${fn:length(VSecondMenu.list) == 0}">--%>
-                                <%--<!--是菜单-->--%>
-                                <%--<dd class="allshow">--%>
-                                    <%--<a  target="u_center" href="javascript:void(0);" onclick="load(this);"--%>
-                                       <%--data-ref="${fn:indexOf(VSecondMenu.menu.href, '://') eq -1 ? adminPath : ''}${VSecondMenu.menu.href}"--%>
-                                       <%--data-id="${VSecondMenu.menu.id}"><i--%>
-                                            <%--class="iconfont ${VSecondMenu.menu.icon}"></i>${VSecondMenu.menu.name}</a>--%>
-                                <%--</dd>--%>
-                            <%--</c:when>--%>
-                            <%--<c:otherwise>--%>
-                                <%--<!--是下级菜单父级-->--%>
-                                <%--<dt>--%>
-                                    <%--<a href="javascript:void(0)" id="${VSecondMenu.id}"><i--%>
-                                            <%--class="iconfont icon-d-1"></i>${VSecondMenu.menu.name}</a>--%>
-                                <%--</dt>--%>
-                                <%--<!--显示三级菜单-->--%>
-                                <%--<c:forEach items="${VSecondMenu.list}" var="menu">--%>
-                                    <%--<dd>--%>
-                                        <%--<a target="u_center" href="javascript:void(0);" onclick="load(this);"--%>
-                                           <%--data-ref="${fn:indexOf(menu.href, '://') eq -1 ? adminPath : ''}${menu.href}"--%>
-                                           <%--data-id="${menu.id}"><i class="iconfont ${menu.icon}"></i>${menu.name}</a>--%>
-                                    <%--</dd>--%>
-                                <%--</c:forEach>--%>
-                            <%--</c:otherwise>--%>
-                        <%--</c:choose>--%>
-                    <%--</dl>--%>
-                <%--</c:forEach>--%>
-            <%--</dd>--%>
-        <%--</dl>--%>
-    <%--</c:forEach>--%>
-
-</div>
 
 <!----右侧结束--->
 <div class="u_centerw">
@@ -258,7 +107,7 @@
             //alert(url)
         } else {
             $(".u_center").attr({
-                "src": "${base}/a/knowledge/content"
+                "src": "${ctx}/${urlHomePage}"
             })
 
         }
