@@ -3,6 +3,7 @@ package com.xpbs.service;
 import com.xpbs.dao.TeacherDao;
 import com.xpbs.domain.Meun;
 import com.xpbs.domain.Teacher;
+import com.xpbs.util.StringUtil;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -46,6 +47,29 @@ public class TeacherServiceImpl implements TeacherService {
             return teachers;
         }catch (Exception e){
             logger.error(""+e);
+        }
+        return null;
+    }
+
+    @Override
+    public List<Teacher> queryTeacherByNameAndCollege(String teaName, String college) {
+        try{
+            List<Teacher> teachers=null;
+            if (StringUtil.checkStringNull(teaName,college)) {
+                teachers=teacherDao.queryAllTeacher();
+                return teachers;
+            }
+            if (StringUtil.checkStringNull(teaName)) {
+                teachers=teacherDao.queryTeacherByCollege(college);
+                return teachers;
+            }
+            if (StringUtil.checkStringNull(college)){
+                teachers=teacherDao.queryTeacherByName(teaName);
+                return teachers;
+            }
+
+        }catch (Exception e){
+            logger.error(e);
         }
         return null;
     }

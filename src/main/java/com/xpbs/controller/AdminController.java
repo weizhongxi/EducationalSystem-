@@ -43,9 +43,6 @@ public class AdminController {
     @RequestMapping("queryTeacher")
     private String queryTeacher(String TeaName,String college,Model model){
 
-        System.out.println("找到啦");
-        System.out.println("TeaName"+TeaName);
-        System.out.println("college = " + college);
         return "/admin/kbsTeacherList";
     }
 }

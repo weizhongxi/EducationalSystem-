@@ -16,4 +16,6 @@ public interface TeacherService {
 
     public List<Teacher> queryAllTeacher();
 
+    public List<Teacher> queryTeacherByNameAndCollege(String teaName,String college);
+
 }

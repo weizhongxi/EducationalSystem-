@@ -21,4 +21,14 @@ public interface TeacherDao {
 
     @Select("select * from teacher")
     public List<Teacher> queryAllTeacher();
+
+    @Select("select * from teacher where teacherName=#{teaName}")
+    public List<Teacher> queryTeacherByName(String teaName);
+
+    @Select("select * from teacher where college=#{college}")
+    public List<Teacher> queryTeacherByCollege(String college);
+
+    @Select("select * from teacher where teacherName=#{teaName} and college=#{college}")
+    public List<Teacher> queryTeacherByTeaNameAndCollege(@Param("teaName") String teaName,@Param("college") String college);
+
 }
