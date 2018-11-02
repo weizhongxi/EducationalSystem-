@@ -5,8 +5,18 @@ package com.xpbs.domain;
  */
 public class Admin {
     private String adminID;
+    private int roleId;
     private String adminName;
     private String adminPassword;
+
+    public int getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(int roleId) {
+        this.roleId = roleId;
+    }
+
     public Admin() {
 
     }

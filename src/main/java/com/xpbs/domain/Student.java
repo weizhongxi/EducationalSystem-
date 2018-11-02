@@ -7,6 +7,24 @@ public class Student {
      private String studentID;
      private String studentName;
      private String stuPassWord;
+     private String professional;
+     private int roleid;
+
+    public String getProfessional() {
+        return professional;
+    }
+
+    public void setProfessional(String professional) {
+        this.professional = professional;
+    }
+
+    public int getRoleid() {
+        return roleid;
+    }
+
+    public void setRoleid(int roleid) {
+        this.roleid = roleid;
+    }
 
     public Student() {
     }

@@ -29,10 +29,21 @@ public class TeacherServiceImpl implements TeacherService {
     }
 
     @Override
-    public List<Meun> getTeacherMeunByUserid(String userid) {
+    public List<Meun> getTeacherMeunByUserid(int userid) {
         try {
             List<Meun> meuns = teacherDao.queryTeacherMenuByUserid(userid);
             return meuns;
+        }catch (Exception e){
+            logger.error(""+e);
+        }
+        return null;
+    }
+
+    @Override
+    public List<Teacher> queryAllTeacher() {
+        try {
+            List<Teacher> teachers = teacherDao.queryAllTeacher();
+            return teachers;
         }catch (Exception e){
             logger.error(""+e);
         }

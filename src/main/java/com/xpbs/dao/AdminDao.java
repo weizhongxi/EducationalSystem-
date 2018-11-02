@@ -16,6 +16,6 @@ import java.util.List;
 public interface AdminDao {
     @Select("select * from admin where adminName=#{username} and adminPassWord=#{password}")
     public Admin queryTeacherDologin(@Param("username")String username, @Param("password") String password);
-    @Select("select * from meun where userid=#{userid}")
-    public List<Meun> queryAdminMenuByUserid(String userid);
+    @Select("select * from meun where roleid=#{roleid}")
+    public List<Meun> queryAdminMenuByUserid(int roleid);
 }

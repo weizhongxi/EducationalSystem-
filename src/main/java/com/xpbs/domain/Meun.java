@@ -5,7 +5,7 @@ package com.xpbs.domain;
  */
 public class Meun {
     private String ID;
-    private String userid;
+    private String roleid;
     private String urlName;
     private String url;
 
@@ -20,12 +20,12 @@ public class Meun {
         this.ID = ID;
     }
 
-    public String getUserid() {
-        return userid;
+    public String getRoleid() {
+        return roleid;
     }
 
-    public void setUserid(String userid) {
-        this.userid = userid;
+    public void setRoleid(String roleid) {
+        this.roleid = roleid;
     }
 
     public String getUrlName() {
@@ -48,7 +48,7 @@ public class Meun {
     public String toString() {
         return "Meun{" +
                 "ID='" + ID + '\'' +
-                ", userid='" + userid + '\'' +
+                ", userid='" + roleid + '\'' +
                 ", urlName='" + urlName + '\'' +
                 ", url='" + url + '\'' +
                 '}';

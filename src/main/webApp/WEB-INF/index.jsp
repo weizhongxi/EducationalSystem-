@@ -56,7 +56,7 @@
                 <ul>
                     <li class="color_cheng_n yh_zz">${user}</li>
                     <li><a href="${sysPath}/login?id=f9d6882e006d4ca6a574f8c993e65053">退出</a></li>
-                    <li><a href="#">关于我们</a></li>
+                    <li><a href="#">修改密码</a></li>
                 </ul>
             </div>
         </div>
@@ -69,7 +69,8 @@
             </li>
 
                 <c:forEach items="${meunList}" var="meunList1">
-                    <li class="col-sm-2"><a href="javascript:void(0);" onclick="load(this);" data-ref="${meunList1.getUrl()}"  class="aMenuA"> ${meunList1.getUrlName()} </a>
+                    <li class="col-sm-2">
+                        <a href="javascript:void(0);" onclick="load(this);" data-ref="${meunList1.getUrl()}"  class="aMenuA"> ${meunList1.getUrlName()} </a>
                     </li>
                 </c:forEach>
         </ul>

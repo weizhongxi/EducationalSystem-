@@ -15,6 +15,10 @@ import java.util.List;
 public interface TeacherDao {
     @Select("select * from teacher where teacherName=#{username} and teacherPassWord=#{password}")
     public Teacher queryTeacherDologin(@Param("username")String username,@Param("password") String password);
+
     @Select("select * from meun where userid=#{userid}")
-    public List<Meun> queryTeacherMenuByUserid(String userid);
+    public List<Meun> queryTeacherMenuByUserid(int userid);
+
+    @Select("select * from teacher")
+    public List<Teacher> queryAllTeacher();
 }

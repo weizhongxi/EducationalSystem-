@@ -30,9 +30,9 @@ public class AdminServiceImpl implements AdminService{
     }
 
     @Override
-    public List<Meun> getAdminMeunByUserid(String userid) {
+    public List<Meun> getAdminMeunByRoleid(int roleid) {
         try {
-            List<Meun> meuns = adminDao.queryAdminMenuByUserid(userid);
+            List<Meun> meuns = adminDao.queryAdminMenuByUserid(roleid);
             return meuns;
         }catch (Exception e){
             logger.error(""+e);

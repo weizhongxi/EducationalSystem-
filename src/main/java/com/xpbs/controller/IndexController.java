@@ -61,7 +61,7 @@ public class IndexController {
                             model.addAttribute("message","用户名或密码错误，请重试！");
                             result="login";
                         }else {
-                            List<Meun> meuns = adminService.getAdminMeunByUserid(adminDologin.getAdminID());
+                            List<Meun> meuns = adminService.getAdminMeunByRoleid(adminDologin.getRoleId());
                             model.addAttribute("meunList",meuns);
                             model.addAttribute("urlHomePage","index/goAdminHomePage.html");
                             model.addAttribute("user","你好，"+username+"管理员");
@@ -119,4 +119,6 @@ public class IndexController {
     public String goStudentHomePage(){
         return "/student/indexContentStudent";
     }
+
+
 }

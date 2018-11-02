@@ -4,18 +4,36 @@ package com.xpbs.domain;
  * Created by admin on 2018/10/28.
  */
 public class Teacher {
-    private String teacherID;
+    private int teacherID;
     private String teacherName;
     private String teacherPassWord;
+    private String college;
+    private int roleid;
+
+    public String getCollege() {
+        return college;
+    }
+
+    public void setCollege(String college) {
+        this.college = college;
+    }
+
+    public int getRoleid() {
+        return roleid;
+    }
+
+    public void setRoleid(int roleid) {
+        this.roleid = roleid;
+    }
 
     public Teacher() {
     }
 
-    public String getTeacherID() {
+    public int getTeacherID() {
         return teacherID;
     }
 
-    public void setTeacherID(String teacherID) {
+    public void setTeacherID(int teacherID) {
         this.teacherID = teacherID;
     }
 

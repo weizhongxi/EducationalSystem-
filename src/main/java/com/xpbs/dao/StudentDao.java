@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.TreeSet;
 
 /**
  * Created by admin on 2018/10/25.
@@ -15,6 +16,10 @@ import java.util.List;
 public interface StudentDao {
     @Select("select * from student where studentName=#{username} and stuPassWord=#{password}")
     public Student queryStudentByNameAndPassword(@Param("username") String username,@Param("password") String password);
+
     @Select("select * from meun where userid=#{userid}")
     public List<Meun> queryStudentMenuByUserid(String userid);
+
+    @Select("select * from student")
+    public List<Student> queryAllStudent();
 }

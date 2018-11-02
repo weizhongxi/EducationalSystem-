@@ -11,5 +11,5 @@ import java.util.List;
  */
 public interface AdminService {
     public Admin getAdminDologin(String username, String password);
-    public List<Meun> getAdminMeunByUserid(String userid);
+    public List<Meun> getAdminMeunByRoleid(int roleid);
 }

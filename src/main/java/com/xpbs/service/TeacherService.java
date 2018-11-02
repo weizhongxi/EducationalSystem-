@@ -9,7 +9,11 @@ import java.util.List;
  * Created by admin on 2018/10/28.
  */
 public interface TeacherService {
+
     public Teacher getTeacherDologin(String username, String password);
-    public List<Meun> getTeacherMeunByUserid(String userid);
+
+    public List<Meun> getTeacherMeunByUserid(int userid);
+
+    public List<Teacher> queryAllTeacher();
 
 }
