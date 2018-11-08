@@ -9,6 +9,15 @@ public class Teacher {
     private String teacherPassWord;
     private String college;
     private int roleid;
+    private String phone;
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 
     public String getCollege() {
         return college;

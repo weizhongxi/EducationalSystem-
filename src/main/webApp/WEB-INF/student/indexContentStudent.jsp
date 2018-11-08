@@ -22,10 +22,9 @@
                         <img src="${ctxStatic}/evalue/images/avatar.png" width="114" height="114">
                     </div>
                     <div class="zh_lb">
-                        <p>登录账号：</p>
-                        <p>姓名：</p>
-                        <p>电话：</p>
-                        <p>专业：}</p>
+                        <p>登录账号：${student.studentName}</p>
+                        <p>姓名：${student.studentName}</p>
+                        <p>专业：${student.professional}</p>
                         <p><strong class="on_right color_cheng">
                             <a href="javascript:;" onclick="iopen('修改资料','#ziliao','700')">修改资料</a></strong></p>
 

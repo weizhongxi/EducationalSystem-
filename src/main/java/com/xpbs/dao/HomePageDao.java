@@ -1,9 +1,8 @@
 package com.xpbs.dao;
 
-import com.xpbs.domain.Inform;
-import com.xpbs.domain.Media;
-import com.xpbs.domain.SchoolNew;
-import com.xpbs.domain.SchoolState;
+import com.xpbs.domain.*;
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
@@ -22,5 +21,11 @@ public interface HomePageDao {
     public List<SchoolNew> querySchoolNews();
     @Select("select * from schoolState")
     public List<SchoolState> querySchoolStates();
+    @Select("select * from message")
+    public List<Message> queryMessages();
+    @Select("select count(*) from message")
+    public Integer queryMessageConunt();
+    @Insert("insert into message values(#{data},#{messageTitle},#{messageContent},#{major},#{time},#{promulgator})")
+    public void insertMessage(@Param("messageTitle") String messageTitle, @Param("major") String major, @Param("promulgator") String promulgator, @Param("messageContent") String messageContent, @Param("data") Integer data, @Param("time") String time);
 }
 

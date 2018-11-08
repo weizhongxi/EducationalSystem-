@@ -19,6 +19,7 @@
         </mvc:message-converters>
     </mvc:annotation-driven>
     <mvc:resources mapping="/evalue/**" location="/evalue/"/>
+    <mvc:resources mapping="/yanliHomePage/**" location="/yanliHomePage/"/>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/"></property>

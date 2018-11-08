@@ -8,6 +8,7 @@ import com.xpbs.service.AdminService;
 import com.xpbs.service.StudentService;
 import com.xpbs.service.TeacherService;
 import com.xpbs.util.RandomValidateCode;
+import com.xpbs.util.UserUtil;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -26,6 +28,8 @@ import java.util.List;
 public class IndexController {
     private Logger logger=Logger.getLogger(IndexController.class);
     private static String statcode;
+    private static Teacher teacher;
+    public static Student student;
     @Autowired
     private TeacherService teacherService;
     @Autowired
@@ -33,11 +37,11 @@ public class IndexController {
     @Autowired
     private StudentService studentService;
     @RequestMapping("/dologin")
-    public String dologin(String username, String password, String usertype, Model model,String code){
+    public String dologin(String username, String password, String usertype, Model model, String code, HttpSession session){
         String result="login";
         if (!statcode.equalsIgnoreCase(code)){
             model.addAttribute("message","验证码错误，请重试！");
-           return result;
+            return result;
         }
         try {
             if (username!=null&&password!=null){
@@ -48,7 +52,9 @@ public class IndexController {
                             model.addAttribute("message","用户名或密码错误，请重试！");
                             result="login";
                         }else {
-                            List<Meun> meuns = teacherService.getTeacherMeunByUserid(teacherDologin.getTeacherID());
+                            teacher=teacherDologin;
+                            session.setAttribute(UserUtil.TEACHER_NAME,teacherDologin.getTeacherName());
+                            List<Meun> meuns = teacherService.getTeacherMeunByRoleId(teacherDologin.getRoleid());
                             model.addAttribute("meunList",meuns);
                             model.addAttribute("urlHomePage","index/goTeacherHomePage.html");
                             model.addAttribute("user","你好，"+username+"老师");
@@ -63,8 +69,11 @@ public class IndexController {
                         }else {
                             List<Meun> meuns = adminService.getAdminMeunByRoleid(adminDologin.getRoleId());
                             model.addAttribute("meunList",meuns);
+                            session.setAttribute(UserUtil.SESSION_MEUN,meuns);
                             model.addAttribute("urlHomePage","index/goAdminHomePage.html");
                             model.addAttribute("user","你好，"+username+"管理员");
+                            model.addAttribute("userRole",adminDologin.getRoleId());
+                            model.addAttribute("adminId",adminDologin.getAdminID());
                             result="index";
                         }
                         break;
@@ -74,7 +83,9 @@ public class IndexController {
                             model.addAttribute("message","用户名或密码错误，请重试！");
                             result="login";
                         }else {
-                            List<Meun> meuns = studentService.getStudentMeunByUserid(studentDologin.getStudentID());
+                            student=studentDologin;
+                            session.setAttribute(UserUtil.STUDENT_NAME,studentDologin.getStudentName());
+                            List<Meun> meuns = studentService.getStudentMeunByRoleID(studentDologin.getRoleid());
                             model.addAttribute("meunList",meuns);
                             model.addAttribute("urlHomePage","index/goStudentHomePage.html");
                             model.addAttribute("user","你好，"+username+"同学");
@@ -108,7 +119,8 @@ public class IndexController {
 
     }
     @RequestMapping("/goTeacherHomePage")
-    public String goTeacherHomePage(){
+    public String goTeacherHomePage(Model model){
+        model.addAttribute("teacher",teacher);
         return "/teacher/indexContentTeacher";
     }
     @RequestMapping("/goAdminHomePage")
@@ -116,9 +128,12 @@ public class IndexController {
         return "/admin/indexContentAdmin";
     }
     @RequestMapping("/goStudentHomePage")
-    public String goStudentHomePage(){
+    public String goStudentHomePage(Model model){
+        model.addAttribute("student",student);
         return "/student/indexContentStudent";
     }
-
-
+    @RequestMapping("/goLoginOut")
+    public String goLoginOut(){
+        return "login";
+    }
 }

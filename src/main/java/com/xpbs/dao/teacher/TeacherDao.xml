@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--引入DTD约束-->
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xpbs.dao.teacher.TeacherDao">
+
+    <select id="queryScoreList" resultType="com.xpbs.domain.Score">
+        select * from score
+        <include refid="conditions"></include>
+
+    </select>
+
+    <sql id="conditions">
+        <where>
+            <if test="studentName!=null and studentName!='' ">
+                AND studentName=#{studentName}
+            </if>
+            <if test="major!=null and major!='' ">
+                AND major=#{major}
+            </if>
+            <if test="studentclass!=null and studentclass!='' ">
+                AND studentclass=#{studentclass}
+            </if>
+            <if test="teacherName!=null and teacherName!='' ">
+                AND teacherName=#{teacherName}
+            </if>
+            <if test="score!=null and score!='' ">
+                AND score=#{score}
+            </if>
+            <if test="subject!=null and subject!='' ">
+                AND subject=#{subject}
+            </if>
+
+        </where>
+    </sql>
+
+
+    <select id="queryCourseListsByCondition" resultType="com.xpbs.domain.Course">
+        SELECT * from course
+        <include refid="conditionA"></include>
+    </select>
+
+    <sql id="conditionA">
+        <where>
+            <if test="teacherName!=null and teacherName!='' ">
+            AND teacherName=#{teacherName}
+        </if>
+            <if test="courseName!=null and courseName!='' ">
+                AND courseName=#{courseName}
+            </if>
+            <if test="ClassObject!=null and ClassObject!='' ">
+                AND ClassObject=#{ClassObject}
+            </if>
+        </where>
+    </sql>
+
+    <!--<select id="queryScoreListByConditions" resultType="com.xpbs.domain.Score">-->
+        <!--select * from score-->
+        <!--<include refid="conditionB"></include>-->
+
+    <!--</select>-->
+    <!--<sql id="conditionB">-->
+        <!--<where>-->
+
+            <!--<if test="major!=null and major!='' ">-->
+            <!--AND major=#{major}-->
+        <!--</if>-->
+            <!--<if test="studentclass!=null and studentclass!='' ">-->
+                <!--AND studentclass=#{studentclass}-->
+            <!--</if>-->
+
+        <!--</where>-->
+    <!--</sql>-->
+</mapper>

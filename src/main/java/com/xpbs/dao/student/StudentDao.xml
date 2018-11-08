@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--引入DTD约束-->
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xpbs.dao.student.StudentDao">
+
+    <select id="queryStuByNameAndprofAndId" resultType="com.xpbs.domain.Student">
+        select * from student
+        <include refid="conditions"></include>
+
+    </select>
+
+    <sql id="conditions">
+        <where>
+            <if test="stuName!=null and stuName!='' ">
+                AND studentName=#{stuName}
+            </if>
+            <if test="prof!=null and prof!='' ">
+                AND professional=#{prof}
+            </if>
+            <if test="stuId!=null and stuId!=0 ">
+                AND studentID=#{stuId}
+            </if>
+
+        </where>
+    </sql>
+</mapper>

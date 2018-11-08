@@ -7,7 +7,8 @@
 	<meta name="decorator" content="evalue" />
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title></title>
+	<title>燕京理工学院教务处管理系统</title>
+	<link rel="icon" href="http://www.yit.edu.cn/skin/default/1505lanb/images/logo.ico" mce_href="/skin/default/1505lanb/images/logo.ico" type="image/x-icon">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
 	<link href="${ctxStatic}/evalue/css/index.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="${ctxStatic}/evalue/css/login.css" rel="stylesheet" type="text/css" />
@@ -26,19 +27,17 @@
 <div class="bg_br color_bai">
 	<div class="logo "><div class="logo_img">
 		<div class="logoi"></div></div>
-		<strong>电子商务专业教学资源管理与测评分析平台</strong>
-		<span>V1.003.1.2</span>
+		<strong>燕京理工学院教务处系统</strong>
 	</div>
 
 	<form action="${ctx}/index/dologin.html" method="post" id="loginForm">
 		<div class="denglu_i text-center">
-			<h1>实现所有教学想象</h1>
-			<p>嵌入式教学资源与教学成果分析</p>
+			<h1>用户登录</h1>
 
 			<%--<input type="hidden" name="systemdesc" value="${systemdesc}" />--%>
-			<input class="denglu_input denglu_input1" data-u="denglu_input1" name="username"  id="username" value="${username}"type="text">
+			<input class="denglu_input denglu_input1" data-u="denglu_input1" name="username"  id="username" value="${username}"type="text" placeholder="请输入用户名">
 
-			<input class="denglu_input denglu_input2" data-u="denglu_input2"  name="password" id="password"  type="password">
+			<input class="denglu_input denglu_input2" data-u="denglu_input2"  name="password" id="password"  type="password" placeholder="请输入密码">
 			<br>
 			<div class="input validate" id="validate">
 				<div>
@@ -48,7 +47,7 @@
 					</p>
 				</div>
 			</div>
-			<div id="messageBox" class="alert alert-error ${empty message ? 'hide' : ''}" style="color: red;font-size: 20px;margin-bottom: -35px"><button data-dismiss="alert" class="close">×</button>
+			<div id="messageBox" class="alert alert-error ${empty message ? 'hide' : ''}" style="color: #ccc;font-size: 20px;margin-bottom: -30px"><button data-dismiss="alert" class="close">×</button>
 				<label id="loginError" class="error">${message}</label>
 			</div>
 
@@ -58,7 +57,7 @@
 				<label><input name="usertype" type="radio" value="admin" ><div class="radio"></div><span><img src="${ctxStatic}/evalue/images/r3.png" ></span></label>
 			</div>
 
-			<input class="shou" name="" type="button"  onclick="login()" style="height: 40px; background-image:url('${ctxStatic}/evalue/images/login.png');background-size:117px 38px;background-repeat:no-repeat;">
+			<input class="shou" name="" type="button"  onclick="login()" style="height: 40px; background-image:url('${ctxStatic}/evalue/images/login2.png');background-size:117px 38px;background-repeat:no-repeat;background-color: #ff6d00">
 			<%--<div  >--%>
 				<%--<button   type="button" onclick="login()" style="background-image:url('${ctxStatic}/evalue/images/login.png')">登录</button>--%>
 			<%--</div>--%>
@@ -66,7 +65,6 @@
 	</form>
 	<script type="text/javascript">
         function login() {
-            console.log(11);
             var username=document.getElementById("username").value;
             var userpwd=document.getElementById("password").value;
             var adminvaliDate=document.getElementById("adminvaliDate").value;

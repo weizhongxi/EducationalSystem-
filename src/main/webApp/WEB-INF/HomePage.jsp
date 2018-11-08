@@ -75,7 +75,7 @@ background-color:#334b9d;
 			<ul class="nav">
 				<li><a href="/">网站首页</a></li>
 				<li><a href="${ctx}/homepage/gologinJsp.html">教务登录</a></li>
-				<li><a href="">系统留言</a></li>
+				<li><a href="${ctx}/homepage/goMessage.html">系统留言</a></li>
 				<li><a href="#xinwen">学校新闻</a></li>
 				<li><a href="#dongtai">校园动态</a></li>
 				<li><a href="#meiti">媒体聚焦</a></li>

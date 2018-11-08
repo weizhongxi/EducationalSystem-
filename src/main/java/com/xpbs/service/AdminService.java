@@ -11,5 +11,10 @@ import java.util.List;
  */
 public interface AdminService {
     public Admin getAdminDologin(String username, String password);
+
     public List<Meun> getAdminMeunByRoleid(int roleid);
+
+    public Admin getAdminById(String id);
+
+    public boolean changeUserPwd(String name,String newPwd);
 }

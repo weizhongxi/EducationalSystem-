@@ -39,4 +39,25 @@ public class AdminServiceImpl implements AdminService{
         }
         return null;
     }
+    @Override
+    public Admin getAdminById(String id) {
+        try{
+            Admin admin = adminDao.selectAdminById(id);
+            return admin;
+        }catch (Exception e){
+            logger.error(""+e);
+        }
+        return null;
+    }
+
+    @Override
+    public boolean changeUserPwd(String name, String newPwd) {
+        try {
+            adminDao.updateAdminPwd(name,newPwd);
+            return true;
+        }catch (Exception e){
+            logger.error(""+e);
+        }
+        return false;
+    }
 }

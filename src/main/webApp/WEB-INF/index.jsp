@@ -4,7 +4,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>培训系统知识库系统 v2.0</title>
+    <title>燕京理工学院教务处管理系统</title>
+    <link rel="icon" href="http://www.yit.edu.cn/skin/default/1505lanb/images/logo.ico" mce_href="/skin/default/1505lanb/images/logo.ico" type="image/x-icon">
     <meta name="decorator" content="evalue" />
     <link href="${ctxStatic}/evalue/css/index.css" rel="stylesheet" type="text/css" media="all" />
     <link href="${ctxStatic}/evalue/css/login.css" rel="stylesheet" type="text/css" />
@@ -48,15 +49,16 @@
                 <div class="logo_img">
                     <div class="logoi"></div>
                 </div>
-                <strong>电子商务专业教学资源管理与测评分析平台</strong>
-                <span>V1.003.1.2</span>
+                <strong>燕京理工学院教务处系统</strong>
             </div>
 
             <div class="usr_r">
                 <ul>
                     <li class="color_cheng_n yh_zz">${user}</li>
-                    <li><a href="${sysPath}/login?id=f9d6882e006d4ca6a574f8c993e65053">退出</a></li>
-                    <li><a href="#">修改密码</a></li>
+                    <li><a href="${ctx}/index/goLoginOut.html">退出</a></li>
+                    <c:if test='${userRole+""=="1"}'>
+                    <li><a href="/index/admin/goToChangePwd.html?id=${adminId}">修改密码</a></li>
+                    </c:if>
                 </ul>
             </div>
         </div>
@@ -68,11 +70,10 @@
             <li class="col-sm-2"><a href="/"  class="aMenuA">首页</a>
             </li>
 
-                <c:forEach items="${meunList}" var="meunList1">
-                    <li class="col-sm-2">
-                        <a href="javascript:void(0);" onclick="load(this);" data-ref="${meunList1.getUrl()}"  class="aMenuA"> ${meunList1.getUrlName()} </a>
-                    </li>
-                </c:forEach>
+            <c:forEach items="${meunList}" var="meunList1">
+                <li class="col-sm-2"><a href="javascript:void(0);" onclick="load(this);" data-ref="${meunList1.getUrl()}"  class="aMenuA"> ${meunList1.getUrlName()} </a>
+                </li>
+            </c:forEach>
         </ul>
     </div>
 

@@ -63,7 +63,7 @@
 
 <div class="bg">
     <div class="input_souw">
-        <div class="inpu_tt">首页 > 角色管理 > 教师管理</div>
+        <div class="inpu_tt">首页 > 管理用户 > 教师管理</div>
         <%--<%@ include file="/WEB-INF/views/include/searchEvalue.jsp"%>--%>
 
     </div>
@@ -74,7 +74,7 @@
 
     <div class="bg_rx">
         <div class="bg_left">
-            <div class="bg_left_t">课程方向管理</div>
+            <div class="bg_left_t">用户管理</div>
             <div class="bg_left_c">
                 <ul>
                     <%--<li><a href="${ctx}/ksanalysis/kbsClass">班级</a></li>--%>
@@ -116,7 +116,7 @@
             </div>
         </div>
 
-        <sys:message content="${message}"/>
+        <span style="color: red">${resultInfo}</span>
         <table class="h_table" width="100%" border="0" cellspacing="0" cellpadding="0">
 
             <thead class="color_cheng">
@@ -138,9 +138,7 @@
                         <%--
                         <td>${user.roleNames}</td> --%>
                     <td class="color_cheng w_230" >
-                        <a href="${ctx}/sys/user/teacherForm?id=${user.id}">修改</a>
-                        <span class="feng_x">|</span>
-                        <a href="${ctx}/sys/user/delete?id=${user.id}" onclick="return confirmx('确认要删除该管理员吗？', this.href)">删除</a>
+                        <a href="/index/admin/laHeiTea.html?id=${tea.teacherID}">拉黑</a>
                     </td>
                 </tr>
             </c:forEach>
@@ -149,9 +147,8 @@
         <div id="noData" class="none_dd2">
             <div></div>
             暂无数据 </div>
-        <button onclick="iopen('添加教师','#tongxunlu','700')" class="btn btn-warning pull-right mr20">
-            <%--<a href="${ctx}/ksanalysis/kbsTeacher/form" style="color: white">添加教师</a>--%>
-            添加教师
+        <button class="btn btn-warning pull-right mr20">
+            <a href="/index/admin/goToAddTeacher.html" style="color: white">添加教师</a>
         </button>
 
         <div class="pagination">${page.pageMsg}</div>

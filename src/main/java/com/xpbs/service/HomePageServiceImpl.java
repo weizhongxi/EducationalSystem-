@@ -1,10 +1,7 @@
 package com.xpbs.service;
 
 import com.xpbs.dao.HomePageDao;
-import com.xpbs.domain.Inform;
-import com.xpbs.domain.Media;
-import com.xpbs.domain.SchoolNew;
-import com.xpbs.domain.SchoolState;
+import com.xpbs.domain.*;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -61,6 +58,39 @@ public class HomePageServiceImpl implements HomePageService {
             logger.error(""+e);
         }
         return null;
+    }
+
+    @Override
+    public List<Message> getMessages() {
+        try {
+            List<Message> messages = homePageDao.queryMessages();
+            return messages;
+        }catch (Exception e){
+            logger.error(""+e);
+        }
+        return null;
+    }
+
+    @Override
+    public Integer getMessageData() {
+        try {
+            Integer data = homePageDao.queryMessageConunt();
+            return data;
+        }catch (Exception e){
+            logger.error(""+e);
+        }
+        return null;
+    }
+
+    @Override
+    public boolean addMessages(String messageTitle, String major, String promulgator, String messageContent,Integer data,String time) {
+        try {
+            homePageDao.insertMessage(messageTitle,major,promulgator,messageContent,data,time);
+            return true;
+        }catch (Exception e){
+            logger.error(""+e);
+        }
+        return false;
     }
 
 }

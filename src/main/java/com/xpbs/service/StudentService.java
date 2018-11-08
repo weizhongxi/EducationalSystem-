@@ -14,7 +14,18 @@ public interface StudentService {
 
    public Student getStudent(String username,String password);
 
-   public List<Meun> getStudentMeunByUserid(String userid);
+   public List<Meun> getStudentMeunByRoleID(int roleID);
 
    public List<Student> getAllStudent();
+
+   public List<Student> queryStuByNameAndProfAndId(String stuName,String prof,String stuId);
+
+   public boolean addStudent(Student student);
+
+   public boolean laheiStudentById(String id);
+
+   public List<Student> queryBlackStu();
+
+   public boolean laBaiStuById(String id);
+
 }

@@ -17,15 +17,15 @@
 
         <ul>
             <li class="gly1">
-                <a href="${ctx}/ksanalysis/kbsClass/list">
+                <a href="/index/admin/manageUsers.html">
                     <i></i>
-                    角色管理
+                    管理用户
                 </a>
             </li>
             <li class="gly2">
-                <a href="${ctx}/knowledge/course/list">
+                <a href="/index/admin/goToBackTea.html">
                 <i></i>
-                课程管理
+                黑名单
                 </a>
             </li>
 

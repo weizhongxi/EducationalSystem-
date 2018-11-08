@@ -17,7 +17,7 @@
 	   }
 	   
 
-.bg_br{ background:#344675 url(../images/br.jpg) no-repeat center; width:100%; height:100%; position:absolute; background-size: cover}
+.bg_br{ background:#344675 url(../images/br1.jpg) no-repeat center; width:100%; height:100%; position:absolute; background-size: cover}
 .logo{ padding-top:40px; text-align:left;}
 .logo .logo_img{ border-right:1px solid; float:left; padding:0 20px 0 50px; margin:2px 20px 0 0 ;}
 .logo strong{ font-weight:normal;font-size:26px;font-family:微软雅黑;}
@@ -72,7 +72,7 @@
 	  
 	  .denglu_i  .shou{ width:120px;}
 /*  }*/
-  .logoi{ width:173px; height:35px; background:url(../images/logo.png) no-repeat;}
+  .logoi{ width:217px; height:45px; background:url(../images/logo1.png) no-repeat;}
  
   
   
@@ -80,7 +80,7 @@
   .head,.headi{ width:100%; background:#f08c00; height:58px;z-index:2000; position:relative}
   .headi{ position: fixed; top:0; left:0; z-index:2000;}
   .head .logo{ float:left;padding-top:12px;}
-  .head .logo .logoi{ width:140px; height:29px;   background:url(../images/logo2.png) no-repeat;}
+  .head .logo .logoi{ width:217px; height:49px;   background:url(../images/logo1.png) no-repeat;margin-top: -5px}
    .head .logo strong{ font-size:20px; padding-top:2px; display:inline-block}
    .head .logo span { font-size: 12px;}
     .head .logo .logo_img{ padding-left:0}

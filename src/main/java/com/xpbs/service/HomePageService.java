@@ -1,9 +1,6 @@
 package com.xpbs.service;
 
-import com.xpbs.domain.Inform;
-import com.xpbs.domain.Media;
-import com.xpbs.domain.SchoolNew;
-import com.xpbs.domain.SchoolState;
+import com.xpbs.domain.*;
 
 import java.util.List;
 
@@ -15,5 +12,7 @@ public interface HomePageService {
     public List<Media> getMedias();
     public List<SchoolNew> getSchoolNews();
     public List<SchoolState> getSchoolStates();
-
+    public List<Message> getMessages();
+    public Integer getMessageData();
+    public boolean addMessages(String messageTitle, String major, String promulgator, String messageContent, Integer data, String time);
 }
